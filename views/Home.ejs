@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Todo List</title>
+</head>
+
+<body>
+    <form action="/" method="post">
+        <div class="container">
+            <div class="form">
+                <input type="text" class="input" name="input" />
+                <button type="submit" class="add">Add Task</button>
+            </div>
+            <div class="tasks">
+                <form action="/delete" method="post">
+                    <ul>
+                        <% for(var i=0 ; i < list.length ; i++){ %>
+                            <li onclick="toggleStrike('<%= idList[i] %>')" id="<%= idList[i] %>" class="task draggable"
+                                draggable="true">
+                                <%= list[i] %>
+                            </li>
+                            <% } %>
+                    </ul>
+                </form>
+            </div>
+           
+    </form>
+
+    </div>
+    <!-- Javascript for striking the elements on click -->
+    <script src="script.js"></script>
+</body>
+
+
+</html>
